@@ -62,6 +62,9 @@ env:
 
 permissions:
   contents: read
+concurrency:
+  group: terraform-${{ github.ref }}
+  cancel-in-progress: false 
 
 jobs:
   terraform_plan:
